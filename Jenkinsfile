@@ -1,4 +1,4 @@
-node1 {
+node1{
 	stage('Build') {
 		echo "Build"
 	}
@@ -10,7 +10,7 @@ node1 {
 	}
 }
 
-node2 {
+node{
 	echo "Build"
 	echo "Test"
 	echo "integration test"
