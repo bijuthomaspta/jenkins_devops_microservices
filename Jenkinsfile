@@ -9,6 +9,7 @@ pipeline {
 		stage('checkout') {
                            steps {
                               sh 'mvn --version '
+			      sh 'docker --version'
          }
 }
 
