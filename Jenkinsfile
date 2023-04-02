@@ -41,7 +41,7 @@ pipeline {
 		stage('Build Docker Image'){
                            steps {
 				   script{
-					   dockerImage = docker.build("bijuthomaspta/currency-exchange-devops:402")
+					   dockerImage = docker.build("bijuthomaspta/currency-exchange-devops:403")
 				         }
          }
 }
@@ -49,7 +49,7 @@ pipeline {
                            steps {
 				   script{
 					   docker.withRegistry('', 'dockerhub') { 
-						   dockerImage.push();
+						   dockerImage.push(latest);
 					   }
 				   }
 			   }
