@@ -41,7 +41,7 @@ pipeline {
 		stage('Build Docker Image'){
                            steps {
 				   script{
-					   dockerImage = docker.build("bijuthomaspta/currency-exchange-devops:403")
+					   dockerImage = docker.build("bijuthomaspta/currency-exchange-devops:404")
 				         }
          }
 }
