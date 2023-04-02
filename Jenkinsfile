@@ -41,13 +41,13 @@ pipeline {
 		stage('Build Docker Image'){
                            steps {
 				   script{
-					   dockerImage = docker.build("bijuthomaspta/currency-exchange-devops:400")
+					   dockerImage = docker.build("bijuthomaspta/currency-exchange-devops:401")
 				         }
          }
 }
 		stage('Push Docker Image') {
                            steps {
-				   sh 'docker push bijuthomaspta/currency-exchange-devops:400'
+				   sh 'docker push bijuthomaspta/currency-exchange-devops:401'
 // 				   script{
 // 					   docker.withRegistry('', 'dockerhub') { 
 // 						   dockerImage.push();
