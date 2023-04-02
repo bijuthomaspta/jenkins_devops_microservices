@@ -33,8 +33,28 @@ pipeline {
                               sh "mvn failsafe:integration-test failsafe:verify"
          }
 }
-
+                 stage('package') {
+                           steps {
+                              sh "mvn package-DiskipTests"
+         }
+}
+		stage('Build Docker Image'){
+                           steps {
+				   script{
+					   dockerImage = docker.build("bijuthomaspta/currency-exchange-devops:${env.BUILD
+				         }
+         }
+}
+		stage('Push Docker Image') {
+                           steps {
+				   script{
+					   docker.withRegistry('', 'dockerhub') { 
+						   dockerImage.push();
+						   dockerImage.push(latest);
+					   }
+				   }
+			   }
+         }
+}
 
 		
-	}
-}
