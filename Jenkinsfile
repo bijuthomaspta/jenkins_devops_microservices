@@ -47,13 +47,12 @@ pipeline {
 }
 		stage('Push Docker Image') {
                            steps {
-				   sh 'docker push bijuthomaspta/currency-exchange-devops:401'
-// 				   script{
-// 					   docker.withRegistry('', 'dockerhub') { 
-// 						   dockerImage.push();
-// 						   dockerImage.push(latest);
-// 					   }
-// 				   }
+				   script{
+					   docker.withRegistry('', 'dockerhub') { 
+						   dockerImage.push();
+						   dockerImage.push(latest);
+					   }
+				   }
 			   }
          }
  }
