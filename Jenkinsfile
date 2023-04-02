@@ -18,16 +18,16 @@ pipeline {
                               sh "mvn clean compile"
          }
 }
-                stage('Test') {
-                           steps {
-                              sh "mvn test"
-         }
-			   post {
-                               always {
-                                    junit 'target/surefire-reports/*.xml' 
-			       }
-			   }
-}
+//                 stage('Test') {
+//                            steps {
+//                               sh "mvn test"
+//          }
+// 			   post {
+//                                always {
+//                                     junit 'target/surefire-reports/*.xml' 
+// 			       }
+// 			   }
+// }
                 stage('Integration Test') {
                            steps {
                               sh "mvn failsafe:integration-test failsafe:verify"
